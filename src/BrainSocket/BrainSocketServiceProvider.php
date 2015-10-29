@@ -2,6 +2,7 @@
 namespace BrainSocket;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Broadcasting\BroadcastManager;
 
 class BrainSocketServiceProvider extends ServiceProvider {
 
@@ -17,9 +18,15 @@ class BrainSocketServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(BroadcastManager $broadcastManager)
 	{
-
+		$broadcastManager->extend('brain_socket',function(){
+			return new BrainSocketBroadcaster($this->app->make('brain_socket'));
+		});
+		
+		 $this->publishes([
+        	__DIR__.'../Assets/js/' => base_path('resource/assets/js/vendor/brain_socket/'),
+    	]);
 	}
 
 	/**

@@ -6,6 +6,7 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 class BrainSocketEventListener implements MessageComponentInterface {
+	
 	protected $clients;
 	protected $response;
 

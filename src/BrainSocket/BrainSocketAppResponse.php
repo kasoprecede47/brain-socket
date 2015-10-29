@@ -8,7 +8,7 @@ class BrainSocketAppResponse{
 	 * @param array $data
 	 * @return object
 	 */
-	public function success($data=array()){
+	public function success($data = array()){
 		return $this->message('app.success',$data);
 	}
 
@@ -17,7 +17,7 @@ class BrainSocketAppResponse{
 	 * @param array $data
 	 * @return object
 	 */
-	public function error($data=array()){
+	public function error($data = array()){
 		return $this->message('app.error',$data);
 	}
 
@@ -27,8 +27,8 @@ class BrainSocketAppResponse{
 	 * @param array $data
 	 * @return object
 	 */
-	public function message($event,$data=array()){
-		$response = (object)array();
+	public function message($event,$data = array()){
+		$response = (object) array();
 		$response->event = $event;
 		$response->data = $data;
 		return $response;

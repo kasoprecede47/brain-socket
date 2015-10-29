@@ -5,7 +5,7 @@ BrainSocket.php
 
 WebSockets for realtime event-driven Laravel apps.
 
-This Laravel 4 package provides an Artisan command to setup and run a WebSocket server
+This Laravel 5 package provides an Artisan command to setup and run a WebSocket server
 with [Ratchet](http://socketo.me/) inside of a Laravel app.
 
 Lets begin by installing this package through Composer. Edit your Laravel project's `composer.json` file and add the require `brainboxlabs/brain-socket`:
@@ -74,29 +74,11 @@ Lets add the following code to `events.php`:
 
 ```php
 <?php
-Event::listen('generic.event',function($client_data){
-	return BrainSocket::message('generic.event',array('message'=>'A message from a generic event fired in Laravel!'));
-});
 
-Event::listen('app.success',function($client_data){
-	return BrainSocket::success(array('There was a Laravel App Success Event!'));
-});
+function broadCastOn(){
+	return ['channel'];
+}
 
-Event::listen('app.error',function($client_data){
-	return BrainSocket::error(array('There was a Laravel App Error!'));
-});
-```
-
-**Note:** The `$client_data` parameter passed into the event listener is a POPO (Plain Old PHP Object) with all of the data passed from the client side.
-
-**Note:** The `app.success` and `app.error` events are not required but are helper events for dealing with flash messaging.
-
-Now in `app/start/global.php` add the following line at the end of the file:
-
-```php
-require app_path().'/filters.php';
-require app_path().'/events.php';
-```
 
 Great! Now we have a few events to test out on the client side. Run the artisan command `php artisan brainsocket:start` to start the ws server again.
 
