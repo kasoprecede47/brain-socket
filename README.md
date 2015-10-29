@@ -68,15 +68,25 @@ hit `ctrl+c` in the terminal.
 
 Lets stop the ws server now by hitting `ctrl+c` in the terminal.
 
-Next in your `app/` folder create a file called `events.php`
+Next in your `config/broadcasting.php` config create a new config like so,
 
-Lets add the following code to `events.php`:
+```php
+<?php
+
+'connections' => [
+
+        'pusher' => [
+            'driver' => 'brain_socket',
+			]
+]
+
+Next in your Event objects, just use like you would normally, like so
 
 ```php
 <?php
 
 function broadCastOn(){
-	return ['channel'];
+	return ['your_channel'];
 }
 
 

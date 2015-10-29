@@ -25,7 +25,7 @@ class BrainSocketServiceProvider extends ServiceProvider {
 		});
 		
 		 $this->publishes([
-        	__DIR__.'../Assets/js/' => base_path('resource/assets/js/vendor/brain_socket/'),
+        	__DIR__.'../Assets/js/' => public_path('vendor/brain_socket/'),
     	]);
 	}
 
