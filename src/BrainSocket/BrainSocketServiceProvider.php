@@ -5,7 +5,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Broadcasting\BroadcastManager;
 
 class BrainSocketServiceProvider extends ServiceProvider {
-
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *

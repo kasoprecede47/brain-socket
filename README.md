@@ -80,6 +80,8 @@ Next in your `config/broadcasting.php` config create a new config like so,
 			]
 ]
 
+```
+
 Next in your Event objects, just use like you would normally, like so
 
 ```php

@@ -1,14 +1,14 @@
 {
 	"name": "kasoprecede47/brain-socket",
 	"type": "library",
-	"description": "Websockets for event-driven Laravel 5 apps, with support for larave 5 BroadcastOn Event Feature.",
+	"description": "Websockets for event-driven Laravel 5 apps, with support for laravel 5 BroadcastOn Event Feature.",
 	"keywords": ["websockets","laravel","events","ratchet","artisan"],
 	"homepage": "https://github.com/kasoprecede47/brain-socket",
 	"license": "MIT",
 	"authors": [
 		{
 			"name": "Okafor Akachukwu Emmanuel",
-			"email": "akason47@gmail.com",
+			"email": "kasoprecede47@gmail.com",
 			"homepage": "https://github.com/kasoprecede47/brain-socket",
 			"role": "Developer"
 		}
